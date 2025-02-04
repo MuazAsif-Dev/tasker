@@ -1,0 +1,12 @@
+import Config from 'react-native-config';
+
+export const env = {
+  NODE_ENV: Config.NODE_ENV,
+  ANDROID_API_URL: Config.ANDROID_API_URL,
+  IOS_API_URL: Config.IOS_API_URL,
+  API_URL: Config.API_URL,
+  API_SOCKET_URL: Config.API_SOCKET_URL,
+  GOOGLE_WEB_CLIENT_ID: Config.GOOGLE_WEB_CLIENT_ID,
+  GOOGLE_ANDROID_CLIENT_ID: Config.GOOGLE_ANDROID_CLIENT_ID,
+  GOOGLE_IOS_CLIENT_ID: Config.GOOGLE_IOS_CLIENT_ID,
+};
