@@ -1,8 +1,17 @@
 import { DateTime } from "luxon";
-import { describe, expect, test } from "vitest";
+import { describe, expect, test, beforeEach,afterEach, vi } from "vitest";
 import { validateDateConstraints } from "./date-time.js";
 
 describe("validateDateConstraints", () => {
+	beforeEach(() => {
+		vi.useFakeTimers();
+		vi.setSystemTime(new Date('2025-02-01T12:00:00Z'));
+	});
+
+	afterEach(() => {
+		vi.useRealTimers();
+	});
+
 	test("Both dueDate and reminderTime are provided and valid", () => {
 		const { newDueDate, newReminderTime } = validateDateConstraints(
 			"2025-02-05T12:00:00Z",
